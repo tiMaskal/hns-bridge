@@ -3,10 +3,10 @@
         "103.196.38.38",
         "103.196.38.39"
     ],
-    "port": 8888,
+    "port": 80,
     "domainMap": {
-        "hns.is": "",
-        "3dom.rocks": "3dom"
-    },
-    "rootRedirect": "https://angrymouse.hns.is/"
+        "hns.im": "",
+        "fotwograf.com": "fotwograf"
+    }, 
+    "rootRedirect": "https://timaxal.hns.im/"
 }
