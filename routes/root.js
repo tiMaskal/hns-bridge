@@ -1,10 +1,13 @@
 const http = require("http");
+// const dns = require("hdns");
+
 const CacheableLookup = require("cacheable-lookup");
 const config = require("../config.json");
 const cacheable = new CacheableLookup();
 const fs = require("fs");
 cacheable.install(http.globalAgent);
 cacheable.servers = config.nameservers;
+// dns.setServers(config.nameservers);
 let path = require("path");
 let analyticsEnabled = fs.existsSync(
 	path.join(__dirname, "../../analytics.json")
@@ -34,6 +37,7 @@ module.exports = async function (fastify, opts) {
 			}
 		}
 	);
+
 	fastify.all("*", function (request, reply) {
 		let hostname = request.hostname; //I really need it for debug, don't remove and make PR!!!
 		let domainMapArray = Object.keys(config.domainMap);
@@ -70,6 +74,12 @@ module.exports = async function (fastify, opts) {
 			return reply.redirect(301, require("../config.json").rootRedirect);
 		}
 		let headers = request.headers;
+		// console.log(
+		// 	// cacheable.resolveNs("")
+		// 	cacheable.resolveNs("serverrq.", {}, (err, addr) => {
+		// 		console.log(addr);
+		// 	})
+		// );
 
 		delete headers.host;
 		try {
