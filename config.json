@@ -5,13 +5,14 @@
 
 
     ],
-    "port": 8888,
+    "port": 80,
     "domainMap": {
-        "hns.is": "",
-        "3dom.rocks": "3dom"
-    },
-    "rootRedirect": "https://angrymouse.hns.is/",
-    "defaultDomain": "hnsis",
+            "hns.im": "",
+        "fotwograf.com": "fotwograf"
+        "wunfoto.xyz": "wunfoto"
+    }, 
+    "rootRedirect": "https://timaxal.hns.im/"
+    "defaultDomain": "hnsim",
     "siaNative": true,
     "siaPortals": ["https://skynetpro.dev/", "http://localhost:9980/skynet/skylink/", "https://siasky.net/"],
     "rootNameserver": "127.0.0.1:5369"
